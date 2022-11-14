@@ -1,0 +1,21 @@
+<h5>Resultados:</h5>
+
+<div class="row">
+  <div
+    *ngFor="let gif of resultados"
+    class="col-lg-3 col-md-4 col-sm-6 pb-3 animate__animated animate__fadeIn"
+  >
+    <div class="card">
+      <img
+        class="card-img-top"
+        [src]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ gif.title }}</h5>
+        <p class="card-text">{{ gif.username }}</p>
+        <a [href]="gif.url" class="btn btn-primary" target="_blank">Ver más </a>
+      </div>
+    </div>
+  </div>
+</div>

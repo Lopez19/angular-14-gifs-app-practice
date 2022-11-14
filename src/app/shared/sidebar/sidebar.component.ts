@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { GifsService } from '../../gifs/services/gifs.service';
+
+@Component({
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+})
+export class SidebarComponent {
+  get historialItems() {
+    return this.gifsService.historial;
+  }
+
+  constructor(private gifsService: GifsService) {}
+
+  buscarItem(item: string) {
+    this.gifsService.buscarGifs(item);
+  }
+}
